@@ -1,0 +1,21 @@
+1. Choose the number of neighbors, k.
+
+2. For a new data point to be classified:
+
+   1. Calculate the distance from the new data point to all points in the training dataset.
+      - Common distance metrics: Euclidean, Manhattan, Minkowski, etc.
+
+   2. Sort the distances in ascending order.
+
+   3. Select the top k points from the sorted list.
+
+   4. For classification:
+      - Count the number of data points in each category among the k neighbors.
+      - Assign the new data point to the category where you counted the most neighbors.
+
+   5. For regression:
+      - Compute the average or median of the numerical target of the k neighbors.
+      - Assign this averaged/median value to the new data point.
+
+3. Return the category (for classification) or value (for regression) for the new data point.
+
