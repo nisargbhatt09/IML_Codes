@@ -1,0 +1,33 @@
+Linear Regression with Gradient Descent Pseudo-code:
+
+1. Initialize Parameters:
+   - Define learning rate (alpha)
+   - Define number of iterations (num_iterations)
+   - Randomly initialize weights (theta) for hypothesis function, h
+
+2. Define Hypothesis Function:
+   - h(X) = X * theta
+     where:
+     - X is the matrix of input features with an added bias column (usually set to ones)
+     - theta is the vector of weights
+
+3. Define Cost Function (Mean Squared Error):
+   - J(theta) = (1/2m) * sum((h(X) - y)^2)
+     where:
+     - m is the number of training examples
+     - y is the actual output
+
+4. Gradient Descent Loop:
+   FOR i = 1 to num_iterations DO:
+       - Compute gradient:
+         gradient = (1/m) * X' * (h(X) - y)
+       - Update weights:
+         theta = theta - alpha * gradient
+
+5. The model is trained once the loop finishes. The optimal weights (theta) can now be used for predictions.
+
+6. To make a prediction for a new input x:
+   - Append a bias term (usually a 1) to x to match the shape of theta
+   - Compute predicted y:
+     y_pred = x * theta
+
