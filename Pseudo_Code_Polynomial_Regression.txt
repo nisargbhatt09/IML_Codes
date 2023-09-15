@@ -1,0 +1,41 @@
+1. Initialize Parameters:
+   - Define learning rate (alpha)
+   - Define number of iterations (num_iterations)
+   - Define polynomial degree (degree)
+   - Randomly initialize weights (theta) for hypothesis function, h
+
+2. Generate Polynomial Features:
+   FOR each feature column in input matrix X DO:
+       FOR d = 2 to degree DO:
+           Add a new column to X which is the current feature raised to the power d
+
+3. Add Bias Term to Input Matrix:
+   - Add a new column (usually set to ones) at the beginning of the modified X
+
+4. Define Hypothesis Function:
+   - h(X) = X * theta
+     where:
+     - X is the matrix of input features with polynomial terms and an added bias column
+     - theta is the vector of weights
+
+5. Define Cost Function (Mean Squared Error):
+   - J(theta) = (1/2m) * sum((h(X) - y)^2)
+     where:
+     - m is the number of training examples
+     - y is the actual output
+
+6. Gradient Descent Loop:
+   FOR i = 1 to num_iterations DO:
+       - Compute gradient:
+         gradient = (1/m) * X' * (h(X) - y)
+       - Update weights:
+         theta = theta - alpha * gradient
+
+7. The model is trained once the loop finishes. The optimal weights (theta) can now be used for predictions.
+
+8. To make a prediction for a new input x:
+   - Generate polynomial features for x as in Step 2
+   - Append a bias term (usually a 1) to x to match the shape of theta
+   - Compute predicted y:
+     y_pred = x * theta
+
